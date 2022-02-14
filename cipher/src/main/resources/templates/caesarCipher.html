@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<title>Caesar Cipher</title>
+</head>
+
+<body>
+
+	<main role="main" class="container-fluid">
+		<form name="formName" id="formId" action="caesarCipherEncryptDecrypt"
+			method="post">
+		<div>
+		<br>
+		<input type="radio" name="encryptOrDecrypt" id="Encrypt" value="Encrypt"/>
+		<label for="Encrypt">Encrypt</label>
+		<input type="radio" name="encryptOrDecrypt" id="Decrypt" value="Decrypt"/>
+		<lable for="decrypt">Decrypt</lable>
+		<br><br>
+		<lable for="shift">Shift(1-25) :</lable>
+		<input type="number" maxlength="2" name="shift" value="0" min="1" max="26" required/><br><br>
+		<label for="statement">Statement to Encrypt/Decrypt :</label>
+		<textarea type="text" id="statement" name="statement" cols="75" rows="5" 
+		oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '');" required></textarea><br><br>
+		<label for="statement">Resultant Statement :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<textarea type="text" id="statement" name="resultantStatement" cols="75" rows="5" disabled></textarea>
+		
+		
+		</div>
+		<br><br><div>
+		<button type="submit">Encrypt/Decrypt</button></div>
+		</form>
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#Encrypt").attr("checked",true);
+		});
+		</script>
+		
+	</main>
+</body>
+
+</html>
